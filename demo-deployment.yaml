@@ -1,0 +1,63 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: web-content
+  namespace: default
+  labels:
+    app: demo-web
+
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Demo TMC</title>
+    </head>
+    <body>
+        <h1>Chào mừng mọi người đến với buổi demo TMC</h1>
+    </body>
+    </html>
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-web
+  namespace: default
+  labels:
+    app: demo-web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: demo-web
+  template:
+    metadata:
+      labels:
+        app: demo-web
+    spec:
+      containers:
+      - name: web-server
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: web-content
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: web-content
+        configMap:
+          name: web-content
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-web-service
+  namespace: default
+spec:
+  selector:
+    app: demo-web
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer
