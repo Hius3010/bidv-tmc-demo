@@ -36,17 +36,24 @@ data:
                 gap: 20px;
             }
             .logo-container img {
-                height: 80px;
+                height: 140px;
                 width: auto;
                 filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.5));
+                opacity: 0;
+                animation: fadeInLogo 2s ease-in-out forwards;
+            }
+            @keyframes fadeInLogo {
+                from { opacity: 0; transform: scale(0.8); }
+                to { opacity: 1; transform: scale(1); }
             }
         </style>
     </head>
     <body>
-        <h1>Chào mừng mọi người đến buổi demo TMC1</h1>
+        <h1>Chào mừng mọi người đến buổi demo TMC</h1>
+        <p>Ứng dụng này được deploy bằng TMC</p>
         <div class="logo-container">
             <img src="https://cdn-new.topcv.vn/unsafe/https://static.topcv.vn/company_logos/xgP58RlfDMVpsSqnbRIlTjBc2fH7AtG3_1666853989____3e36d5debfb97ff1de9553ad72d458e1.png" alt="Amigo Logo">
-            <img src="https://bidv.com.vn/wps/wcm/connect/674b6448-d23b-484e-b4d3-1e86fa68bd0d/Logo+Nguyen+ban+nen+trang.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE-674b6448-d23b-484e-b4d3-1e86fa68bd0d-pfdjkOq" alt="BIDV Logo">
+            <img src="https://bidv.com.vn/wps/wcm/connect/50809043-c9b7-40e9-9d5c-a419caca1b79/Logo+Nguyen+nen+xanh.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE-50809043-c9b7-40e9-9d5c-a419caca1b79-pfdjkOq" alt="BIDV Logo">
         </div>
     </body>
     </html>
