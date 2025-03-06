@@ -45,8 +45,8 @@ data:
     <body>
         <h1>Chào mừng mọi người đến buổi demo TMC</h1>
         <div class="logo-container">
-            <img src="amigo.jpeg" alt="Amigo Logo">
-            <img src="bidv.png" alt="BIDV Logo">
+            <img src="https://github.com/Hius3010/bidv-tmc-demo/blob/master/demo/amigo.jpeg" alt="Amigo Logo">
+            <img src="https://github.com/Hius3010/bidv-tmc-demo/blob/master/demo/bidv.png" alt="BIDV Logo">
         </div>
     </body>
     </html>
