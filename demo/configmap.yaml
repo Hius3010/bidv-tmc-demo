@@ -6,11 +6,40 @@ metadata:
     app: demo-web
 data:
   index.html: |
-    <html>
-      <head>
-        <title>Demo TMC</title>
-      </head>
-      <body>
-        <h1>Chao mung den voi buoi demo TMC</h1>
-      </body>
+    <!DOCTYPE html>
+    <html lang="vi">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Demo TMC</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          text-align: center;
+          background: linear-gradient(to right, #ff7e5f, #feb47b);
+          color: white;
+          padding: 50px;
+        }
+        h1 {
+          font-size: 3em;
+          animation: blink 1.5s infinite alternate;
+        }
+        @keyframes blink {
+          from { opacity: 1; }
+          to { opacity: 0.7; }
+        }
+        p {
+          font-size: 1.2em;
+          animation: slide 2s ease-in-out;
+        }
+        @keyframes slide {
+          from { transform: translateY(20px); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
+        }
+      </style>
+    </head>
+    <body>
+      <h1>Chào mừng mọi người đến buổi demo TMC</h1>
+      <p>Trang web này được deploy thông qua Tanzu Mission Control!</p>
+    </body>
     </html>
